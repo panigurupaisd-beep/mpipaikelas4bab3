@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran PAI Kelas 4 - Indahnya Saling Menghargai dalam Keragaman</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Poppins & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#10b981',
+                        accent: '#f59e0b',
+                        funpurple: '#8b5cf6',
+                        funpink: '#ec4899',
+                        darkText: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #1e293b;
+            min-height: 100vh;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.15), 0 8px 10px -6px rgba(14, 165, 233, 0.1);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header / Navbar Navigasi Utama -->
+    <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+            <!-- Brand / Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchScreen('cover')">
+                <div class="w-12 h-12 bg-gradient-to-tr from-sky-500 to-emerald-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg sm:text-xl text-sky-900 tracking-tight">PAI Kelas 4 SD</h1>
+                    <p class="text-xs text-slate-500 font-medium">Pembuat: M. Ripani, S.Pd</p>
+                </div>
+            </div>
+
+            <!-- Navigation Menu (Desktop & Tablet) -->
+            <nav class="hidden lg:flex items-center space-x-1 overflow-x-auto py-1">
+                <button onclick="switchScreen('cover')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="cover">
+                    <i class="fa-solid fa-house"></i> Beranda
+                </button>
+                <button onclick="switchScreen('petunjuk')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="petunjuk">
+                    <i class="fa-solid fa-book-open"></i> Petunjuk
+                </button>
+                <button onclick="switchScreen('materi')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="materi">
+                    <i class="fa-solid fa-graduation-cap"></i> Materi
+                </button>
+                <button onclick="switchScreen('aktivitas')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="aktivitas">
+                    <i class="fa-solid fa-puzzle-piece"></i> Aktivitas
+                </button>
+                <button onclick="switchScreen('game')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="game">
+                    <i class="fa-solid fa-gamepad"></i> Game
+                </button>
+                <button onclick="switchScreen('latihan')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="latihan">
+                    <i class="fa-solid fa-list-check"></i> Latihan
+                </button>
+                <button onclick="switchScreen('kuis')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="kuis">
+                    <i class="fa-solid fa-circle-question"></i> Kuis
+                </button>
+                <button onclick="switchScreen('hasil')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="hasil">
+                    <i class="fa-solid fa-trophy"></i> Hasil
+                </button>
+                <button onclick="switchScreen('refleksi')" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-sky-50 hover:text-sky-600 transition flex items-center gap-1.5" data-target="refleksi">
+                    <i class="fa-solid fa-comments"></i> Refleksi
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center space-x-2 lg:hidden">
+                <button onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-sky-50 text-sky-600 hover:bg-sky-100 transition focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <button onclick="switchScreen('cover'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-house w-5 text-sky-500"></i> Beranda
+            </button>
+            <button onclick="switchScreen('petunjuk'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-book-open w-5 text-sky-500"></i> Petunjuk
+            </button>
+            <button onclick="switchScreen('materi'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-graduation-cap w-5 text-sky-500"></i> Materi Pembelajaran
+            </button>
+            <button onclick="switchScreen('aktivitas'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-puzzle-piece w-5 text-sky-500"></i> Aktivitas Interaktif
+            </button>
+            <button onclick="switchScreen('game'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-gamepad w-5 text-sky-500"></i> Game Edukasi
+            </button>
+            <button onclick="switchScreen('latihan'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-list-check w-5 text-sky-500"></i> Latihan Soal
+            </button>
+            <button onclick="switchScreen('kuis'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-circle-question w-5 text-sky-500"></i> Kuis Akhir
+            </button>
+            <button onclick="switchScreen('hasil'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-trophy w-5 text-sky-500"></i> Hasil & Skor
+            </button>
+            <button onclick="switchScreen('refleksi'); toggleMobileMenu();" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-sky-50 hover:text-sky-600 flex items-center gap-3">
+                <i class="fa-solid fa-comments w-5 text-sky-500"></i> Refleksi Diri
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 sm:py-8">
+
+        <!-- ================= 1. HALAMAN PEMBUKA (COVER) ================= -->
+        <section id="screen-cover" class="screen-section animate-fade-in">
+            <div class="bg-gradient-to-br from-sky-500 via-indigo-600 to-purple-600 rounded-3xl p-6 sm:p-12 text-white card-shadow relative overflow-hidden">
+                <!-- Background decorative shapes -->
+                <div class="absolute -right-16 -top-16 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -left-16 -bottom-16 w-64 h-64 bg-emerald-400/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs sm:text-sm font-semibold tracking-wide">
+                            <i class="fa-solid fa-book-bookmark text-emerald-300"></i> Kurikulum Merdeka • Fase C (Kelas 4 SD)
+                        </span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                            Indahnya Saling Menghargai dalam Keragaman
+                        </h2>
+                        <p class="text-sky-100 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                            Mari belajar mengenal keragaman sebagai sunnatullah, meneladani ajaran kebaikan, serta membiasakan sikap saling menghormati dengan gembira dan penuh makna bersama maskot sahabat kita!
+                        </p>
+
+                        <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                            <button onclick="switchScreen('materi')" class="btn-hover px-8 py-4 bg-emerald-400 hover:bg-emerald-500 text-slate-900 font-bold rounded-2xl shadow-xl flex items-center gap-3 text-lg">
+                                <i class="fa-solid fa-play text-slate-900"></i> MULAI BELAJAR
+                            </button>
+                            <button onclick="switchScreen('petunjuk')" class="btn-hover px-6 py-4 bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-2xl flex items-center gap-2 text-white text-base">
+                                <i class="fa-solid fa-circle-info"></i> Petunjuk Penggunaan
+                            </button>
+                        </div>
+
+                        <!-- Identitas Pembuat -->
+                        <div class="pt-6 border-t border-white/20 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-sky-100">
+                            <div><i class="fa-solid fa-school text-emerald-300 mr-1.5"></i> Mata Pelajaran: PAI & Budi Pekerti</div>
+                            <div><i class="fa-solid fa-user-pen text-emerald-300 mr-1.5"></i> Pembuat: <strong>M. Ripani, S.Pd</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual / Mascot Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 text-center shadow-2xl max-w-sm w-full relative">
+                            <div class="absolute -top-4 -right-4 bg-amber-400 text-slate-900 font-extrabold text-xs px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
+                                <i class="fa-solid fa-star"></i> Interaktif
+                            </div>
+                            <div class="w-32 h-32 mx-auto bg-gradient-to-tr from-emerald-400 to-sky-400 rounded-full flex items-center justify-center shadow-inner mb-4 text-white text-6xl">
+                                👦🏽🤝👧🏻
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Ayo Kenal & Hargai Sesama!</h3>
+                            <p class="text-xs text-sky-100 mb-4">
+                                "Perbedaan suku, bahasa, dan agama adalah anugerah Allah agar kita saling mengenal (litaʿārafū)."
+                            </p>
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                                <div class="bg-white/10 p-2.5 rounded-xl">
+                                    <div class="font-bold text-emerald-300 text-sm">A</div>
+                                    <div class="text-[10px] text-sky-200">Sunnatullah</div>
+                                </div>
+                                <div class="bg-white/10 p-2.5 rounded-xl">
+                                    <div class="font-bold text-amber-300 text-sm">B</div>
+                                    <div class="text-[10px] text-sky-200">Kebaikan</div>
+                                </div>
+                                <div class="bg-white/10 p-2.5 rounded-xl">
+                                    <div class="font-bold text-pink-300 text-sm">C</div>
+                                    <div class="text-[10px] text-sky-200">Toleransi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. PETUNJUK PENGGUNAAN ================= -->
+        <section id="screen-petunjuk" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-14 h-14 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800">Petunjuk Penggunaan Media</h2>
+                        <p class="text-sm text-slate-500">Panduan praktis bagi peserta didik dan guru dalam menjelajahi bahan ajar interaktif.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-sky-50/50 border border-sky-100 p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-sky-500 text-white rounded-xl flex items-center justify-center text-lg font-bold mb-4 shadow-md">1</div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-2">Eksplorasi Materi</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Pahami materi bab demi bab secara runtut (A, B, dan C) dilengkapi ilustrasi bergambar dan penjelasan singkat yang mudah dimengerti.
+                        </p>
+                    </div>
+                    <div class="bg-emerald-50/50 border border-emerald-100 p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-emerald-500 text-white rounded-xl flex items-center justify-center text-lg font-bold mb-4 shadow-md">2</div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-2">Aktivitas & Game</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Uji pemahamanmu lewat aktivitas seru, teka-teki interaktif, serta game edukasi untuk melatih keterampilan berpikir kritis.
+                        </p>
+                    </div>
+                    <div class="bg-amber-50/50 border border-amber-100 p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center text-lg font-bold mb-4 shadow-md">3</div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-2">Latihan & Kuis</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Kerjakan soal latihan berumpan balik langsung dan selesaikan 10 soal kuis evaluasi akhir untuk mendapatkan lencana prestasi terbaikmu!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <button onclick="switchScreen('materi')" class="btn-hover px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-xl flex items-center gap-2">
+                        Mulai Belajar Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. MATERI PEMBELAJARAN ================= -->
+        <section id="screen-materi" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800">Materi Pembelajaran</h2>
+                            <p class="text-sm text-slate-500">Bab 3: Indahnya Saling Menghargai dalam Keragaman</p>
+                        </div>
+                    </div>
+                    <!-- Sub-materi Tabs -->
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="switchSubMateri('subA')" class="sub-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-sky-600 text-white transition shadow-sm" id="btn-subA">A. Sunnatullah</button>
+                        <button onclick="switchSubMateri('subB')" class="sub-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" id="btn-subB">B. Ajaran Kebaikan</button>
+                        <button onclick="switchSubMateri('subC')" class="sub-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition" id="btn-subC">C. Toleransi</button>
+                    </div>
+                </div>
+
+                <!-- SUB-MATERI A -->
+                <div id="submateri-subA" class="sub-content space-y-6">
+                    <div class="bg-sky-50 border-l-4 border-sky-500 p-6 rounded-r-2xl">
+                        <h3 class="text-xl font-bold text-sky-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-earth-asia text-sky-600"></i> A. Keragaman sebagai Sunnatullah
+                        </h3>
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                            Indonesia adalah negeri yang majemuk, terdiri dari aneka ragam agama, suku, bangsa, warna kulit dengan kekhasan masing-masing. Saling menghormati dan menghargai adalah modal utama hidup damai. Keragaman adalah kenyataan yang tidak bisa dihindari dan merupakan <strong>sunnatullah</strong> (ketetapan Allah SWT).
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-people-group text-emerald-600"></i> Keragaman Suku & Bangsa di Indonesia
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Ada beberapa bangsa besar hidup di negeri kita seperti Melayu, Arab, China, dan Eropa. Negeri kita juga dihuni suku-suku besar seperti:
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">Suku Jawa</span>
+                                <span class="px-3 py-1 bg-sky-100 text-sky-800 rounded-full text-xs font-semibold">Suku Sunda</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold">Betawi</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-semibold">Dayak</span>
+                                <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-semibold">Ambon</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-semibold">Bugis & Madura</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-hands-praying text-sky-600"></i> Tujuan Allah Menciptakan Keragaman
+                            </h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Agama yang dianut penduduk Indonesia juga beragam: Islam, Kristen, Katolik, Hindu, Buddha, dan Konghuchu.
+                            </p>
+                            <div class="bg-emerald-500 text-white p-4 rounded-xl shadow-md text-center">
+                                <p class="text-xs uppercase tracking-wider font-semibold opacity-90">Tujuan Utama (Litaʿārafū):</p>
+                                <p class="text-lg font-bold mt-1">"Agar saling mengenal, menghasilkan hubungan harmonis, kerja sama, dan saling mendukung."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-MATERI B -->
+                <div id="submateri-subB" class="sub-content hidden space-y-6">
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl">
+                        <h3 class="text-xl font-bold text-amber-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-heart text-amber-600"></i> B. Ajaran Kebaikan dalam Islam dan Selain Islam
+                        </h3>
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                            Rasulullah SAW bersabda dalam hadis riwayat Muslim dari Nawwas bin Sam'an al-Ansari:
+                        </p>
+                        <div class="bg-white p-4 rounded-xl my-3 shadow-sm border border-amber-200 text-center">
+                            <p class="text-lg font-bold text-slate-800 font-arabic mb-2" dir="rtl">الْبِرِّ حُسْنُ الْخُلُقِ، وَالإِثْمُ مَا حَاكَ فِي صَدْرِكَ وَكَرِهْتَ أَنْ يَطَّلِعَ عَلَيْهِ النَّاسُ</p>
+                            <p class="text-sm italic text-slate-600">"Kebaikan adalah akhlak mulia dan keburukan adalah sesuatu yang membuat hatimu ragu..."</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <div class="w-10 h-10 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center font-bold mb-3">1</div>
+                            <h4 class="font-bold text-slate-800 mb-2">Akhlak kepada Allah SWT</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Melaksanakan perintah-Nya dengan ikhlas seperti shalat, berdzikir, dan bersyukur atas nikmat-Nya.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold mb-3">2</div>
+                            <h4 class="font-bold text-slate-800 mb-2">Akhlak kepada Sesama</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Bersikap lemah lembut, menolong tetangga, berbuat baik kepada siapa saja tanpa memandang agama.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center font-bold mb-3">3</div>
+                            <h4 class="font-bold text-slate-800 mb-2">Akhlak kepada Alam</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Menjaga lingkungan, menyayangi hewan, dan tidak merusak tumbuhan tanpa alasan yang benar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-MATERI C -->
+                <div id="submateri-subC" class="sub-content hidden space-y-6">
+                    <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-2xl">
+                        <h3 class="text-xl font-bold text-emerald-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-handshake text-emerald-600"></i> C. Saling Menghormati & Menghargai (Toleransi)
+                        </h3>
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                            Sikap terbaik dalam keragaman adalah saling menghargai dan menghormati yang dikenal dengan <strong>toleransi</strong>. Toleransi diwujudkan dengan:
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">✓</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Memberikan Kebebasan</h4>
+                                <p class="text-xs text-slate-600">Memberikan kebebasan kepada orang lain untuk beribadah sesuai keyakinannya.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">✓</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Mengakui Hak Individu</h4>
+                                <p class="text-xs text-slate-600">Menghargai hak setiap orang untuk hidup damai dan berdampingan.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">✓</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Menghormati Keyakinan</h4>
+                                <p class="text-xs text-slate-600">Tidak mengganggu jalannya ibadah agama lain di lingkungan sekitar.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">✓</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Saling Mengerti & Batasan</h4>
+                                <p class="text-xs text-slate-600">Toleransi tidak boleh mencampurbaurkan akidah (seperti ditegaskan dalam Q.S. Al-Kafirun).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation buttons inside materi -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between">
+                    <button onclick="switchScreen('petunjuk')" class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-600 font-semibold hover:bg-slate-50 transition text-sm">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Sebelumnya
+                    </button>
+                    <button onclick="switchScreen('aktivitas')" class="px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition text-sm flex items-center gap-2">
+                        Lanjut ke Aktivitas <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. AKTIVITAS INTERAKTIF ================= -->
+        <section id="screen-aktivitas" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800">Aktivitas Interaktif: Pencocokan Perilaku</h2>
+                        <p class="text-sm text-slate-500">Pasangkan pernyataan di sebelah kiri dengan kategori yang tepat di sebelah kanan!</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-slate-700 text-sm">Pernyataan Perilaku:</h3>
+                        <div class="p-4 bg-sky-50 rounded-2xl border border-sky-200 text-sm font-semibold text-slate-800">
+                            1. Melaksanakan shalat lima waktu dengan khusyuk.
+                        </div>
+                        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-sm font-semibold text-slate-800">
+                            2. Membantu teman yang berbeda agama yang sedang jatuh di jalan.
+                        </div>
+                        <div class="p-4 bg-amber-50 rounded-2xl border border-amber-200 text-sm font-semibold text-slate-800">
+                            3. Menyiram tanaman dan tidak membuang sampah sembarangan.
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-slate-700 text-sm">Pilih Kategori Jawaban:</h3>
+                        <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <span class="text-sm font-medium">1. Shalat lima waktu</span>
+                            <select id="match-1" class="px-3 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold focus:ring-2 focus:ring-sky-500">
+                                <option value="">-- Pilih Kategori --</option>
+                                <option value="allah">Akhlak kepada Allah SWT</option>
+                                <option value="manusia">Akhlak kepada Sesama</option>
+                                <option value="alam">Akhlak kepada Alam</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <span class="text-sm font-medium">2. Menolong teman beda agama</span>
+                            <select id="match-2" class="px-3 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold focus:ring-2 focus:ring-sky-500">
+                                <option value="">-- Pilih Kategori --</option>
+                                <option value="allah">Akhlak kepada Allah SWT</option>
+                                <option value="manusia">Akhlak kepada Sesama</option>
+                                <option value="alam">Akhlak kepada Alam</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <span class="text-sm font-medium">3. Menyiram tanaman</span>
+                            <select id="match-3" class="px-3 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold focus:ring-2 focus:ring-sky-500">
+                                <option value="">-- Pilih Kategori --</option>
+                                <option value="allah">Akhlak kepada Allah SWT</option>
+                                <option value="manusia">Akhlak kepada Sesama</option>
+                                <option value="alam">Akhlak kepada Alam</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                    <button onclick="checkActivity()" class="btn-hover px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm shadow-md">
+                        <i class="fa-solid fa-check-circle mr-2"></i> Periksa Jawaban
+                    </button>
+                    <div id="activity-result" class="text-sm font-bold"></div>
+                    <button onclick="switchScreen('game')" class="px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition text-sm flex items-center gap-2">
+                        Lanjut ke Game <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. GAME EDUKASI ================= -->
+        <section id="screen-game" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow text-center">
+                <div class="w-16 h-16 mx-auto bg-purple-100 text-purple-600 rounded-3xl flex items-center justify-center text-3xl font-bold mb-4 shadow-sm">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800 mb-2">Mini-Game: Tebak Sikap Toleransi</h2>
+                <p class="text-sm text-slate-500 max-w-xl mx-auto mb-6">Tentukan apakah pernyataan berikut termasuk sikap terpuji (Toleransi/Benar) atau tidak terpuji (Salah)!</p>
+
+                <div id="game-container" class="max-w-xl mx-auto bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 mb-6 shadow-inner">
+                    <div id="game-question" class="text-lg font-bold text-slate-800 mb-6">
+                        Membiarkan teman yang berbeda agama beribadah dengan tenang di tempat ibadahnya.
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="answerGame(true)" class="btn-hover p-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl shadow-md text-base flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i> Sikap Terpuji
+                        </button>
+                        <button onclick="answerGame(false)" class="btn-hover p-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl shadow-md text-base flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-xmark"></i> Bukan Sikap Terpuji
+                        </button>
+                    </div>
+                </div>
+
+                <div id="game-feedback" class="text-base font-bold mb-6 hidden"></div>
+
+                <div class="flex justify-between items-center pt-4 border-t border-slate-100">
+                    <button onclick="resetGame()" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs sm:text-sm">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Main Lagi
+                    </button>
+                    <button onclick="switchScreen('latihan')" class="px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition text-sm flex items-center gap-2">
+                        Lanjut ke Latihan Soal <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. LATIHAN SOAL ================= -->
+        <section id="screen-latihan" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800">Latihan Soal Mandiri</h2>
+                        <p class="text-sm text-slate-500">Uji pemahaman cepat dengan umpan balik langsung.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 max-w-2xl mx-auto">
+                    <!-- Soal 1 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+                        <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">1. Tujuan Allah menciptakan manusia bersuku-suku dan berbangsa-bangsa adalah...</p>
+                        <div class="space-y-2" id="lat-1">
+                            <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-sky-50 transition">
+                                <input type="radio" name="l1" value="salah" class="text-sky-600">
+                                <span class="text-sm text-slate-700">Agar saling bersaing dan bermusuhan</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-sky-50 transition">
+                                <input type="radio" name="l1" value="benar" class="text-sky-600">
+                                <span class="text-sm text-slate-700">Agar saling mengenal (litaʿārafū) dan bekerja sama</span>
+                            </label>
+                        </div>
+                        <div id="feedback-l1" class="mt-3 text-xs font-semibold hidden"></div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+                        <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">2. Kebaikan dalam Islam sebagaimana ditegaskan Rasulullah SAW adalah...</p>
+                        <div class="space-y-2" id="lat-2">
+                            <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-sky-50 transition">
+                                <input type="radio" name="l2" value="benar" class="text-sky-600">
+                                <span class="text-sm text-slate-700">Akhlak mulia kepada Allah, sesama, dan alam sekitar</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-sky-50 transition">
+                                <input type="radio" name="l2" value="salah" class="text-sky-600">
+                                <span class="text-sm text-slate-700">Hanya berbuat baik kepada sesama muslim saja</span>
+                            </label>
+                        </div>
+                        <div id="feedback-l2" class="mt-3 text-xs font-semibold hidden"></div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between mt-8 pt-6 border-t border-slate-100 max-w-2xl mx-auto">
+                    <button onclick="checkLatihan()" class="btn-hover px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm shadow-md">
+                        <i class="fa-solid fa-check mr-2"></i> Periksa Latihan
+                    </button>
+                    <button onclick="switchScreen('kuis')" class="px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition text-sm flex items-center gap-2">
+                        Lanjut ke Kuis Akhir <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. KUIS AKHIR (10 SOAL) ================= -->
+        <section id="screen-kuis" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow max-w-3xl mx-auto">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-800">Kuis Evaluasi Akhir</h2>
+                            <p class="text-xs sm:text-sm text-slate-500">Jawab 10 soal pilihan ganda dengan cermat!</p>
+                        </div>
+                    </div>
+                    <div id="quiz-progress-indicator" class="text-xs sm:text-sm font-bold text-sky-600 bg-sky-50 px-3 py-1.5 rounded-xl">
+                        Soal 1 dari 10
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-100 h-3 rounded-full mb-6 overflow-hidden">
+                    <div id="quiz-progress-bar" class="bg-sky-500 h-full w-[10%] transition-all duration-300"></div>
+                </div>
+
+                <!-- Quiz Box -->
+                <div id="quiz-card" class="space-y-6">
+                    <div id="quiz-question-text" class="text-base sm:text-lg font-bold text-slate-800">
+                        Pertanyaan kuis akan dimuat di sini...
+                    </div>
+                    <div id="quiz-options-container" class="space-y-3">
+                        <!-- Options generated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Quiz Navigation / Controls -->
+                <div class="flex items-center justify-between mt-8 pt-6 border-t border-slate-100">
+                    <button id="quiz-prev-btn" onclick="prevQuizQuestion()" class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-600 font-semibold hover:bg-slate-50 transition text-sm disabled:opacity-50">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Sebelumnya
+                    </button>
+                    <button id="quiz-next-btn" onclick="nextQuizQuestion()" class="px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition text-sm flex items-center gap-2">
+                        Selanjutnya <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. HALAMAN HASIL ================= -->
+        <section id="screen-hasil" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow max-w-2xl mx-auto text-center">
+                <div class="w-20 h-20 mx-auto bg-amber-100 text-amber-500 rounded-full flex items-center justify-center text-4xl font-bold mb-4 shadow-md animate-bounce">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800 mb-1">Hasil Evaluasi Belajar</h2>
+                <p id="result-badge-title" class="text-sm font-bold text-emerald-600 mb-6">Luar Biasa, Hebat!</p>
+
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="bg-sky-50 p-4 rounded-2xl border border-sky-100">
+                        <div class="text-xs text-slate-500 font-medium">Skor Akhir</div>
+                        <div id="result-score" class="text-2xl sm:text-3xl font-extrabold text-sky-600 mt-1">100</div>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100">
+                        <div class="text-xs text-slate-500 font-medium">Jawaban Benar</div>
+                        <div id="result-correct" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 mt-1">10 / 10</div>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-2xl border border-purple-100">
+                        <div class="text-xs text-slate-500 font-medium">Status</div>
+                        <div id="result-status" class="text-sm sm:text-base font-extrabold text-purple-600 mt-2">Lulus ✓</div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <button onclick="switchScreen('refleksi')" class="btn-hover w-full py-3.5 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-2xl shadow-md text-sm">
+                        Lanjut ke Refleksi Diri <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                    <button onclick="switchScreen('kuis'); resetQuiz();" class="w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-2xl text-sm">
+                        <i class="fa-solid fa-rotate-right mr-2"></i> Ulangi Kuis
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 9. REFLEKSI PESERTA DIDIK ================= -->
+        <section id="screen-refleksi" class="screen-section hidden animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow max-w-2xl mx-auto">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800">Refleksi Pembelajaran</h2>
+                        <p class="text-sm text-slate-500">Bagikan kesan dan pengalaman belajarmu hari ini.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <label class="block font-bold text-slate-700 text-sm mb-2">1. Bagaimana perasaanmu setelah mempelajari Bab 3 tentang keragaman?</label>
+                        <div class="flex gap-4 justify-center py-2">
+                            <button onclick="selectEmoji('senang', this)" class="emoji-btn text-3xl p-3 bg-slate-50 rounded-2xl border border-slate-200 hover:scale-110 transition">😊</button>
+                            <button onclick="selectEmoji('hebat', this)" class="emoji-btn text-3xl p-3 bg-slate-50 rounded-2xl border border-slate-200 hover:scale-110 transition">⭐</button>
+                            <button onclick="selectEmoji('semangat', this)" class="emoji-btn text-3xl p-3 bg-slate-50 rounded-2xl border border-slate-200 hover:scale-110 transition">🚀</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block font-bold text-slate-700 text-sm mb-2">2. Apa hal paling menarik yang kamu pelajari?</label>
+                        <textarea id="reflection-text" rows="3" class="w-full p-4 rounded-2xl border border-slate-300 focus:ring-2 focus:ring-sky-500 text-sm" placeholder="Tuliskan pengalaman atau hal yang paling kamu sukai..."></textarea>
+                    </div>
+
+                    <button onclick="saveReflection()" class="btn-hover w-full py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl shadow-md text-sm">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Refleksi
+                    </button>
+                </div>
+
+                <div class="flex justify-between items-center mt-8 pt-6 border-t border-slate-100">
+                    <button onclick="switchScreen('hasil')" class="px-4 py-2 text-slate-600 font-semibold text-sm">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Kembali ke Hasil
+                    </button>
+                    <button onclick="switchScreen('cover')" class="px-6 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition text-sm">
+                        Kembali ke Beranda <i class="fa-solid fa-house ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-1">
+            <p class="font-semibold text-slate-700">Media Pembelajaran Interaktif PAI Kelas 4 SD (Fase C) — Bab 3</p>
+            <p>Pembuat: <strong class="text-sky-600">M. Ripani, S.Pd</strong> • Hak Cipta Dilindungi Undang-Undang</p>
+        </div>
+    </footer>
+
+    <!-- Custom Modal / Notification Box (No alert/confirm) -->
+    <div id="custom-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl animate-scale-up">
+            <div id="modal-icon" class="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-3xl font-bold mb-4"></div>
+            <h3 id="modal-title" class="text-xl font-bold text-slate-800 mb-2">Informasi</h3>
+            <p id="modal-message" class="text-sm text-slate-600 mb-6">Pesan informasi sistem.</p>
+            <button onclick="closeModal()" class="w-full py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl text-sm shadow-md">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Screen Switching Logic
+        function switchScreen(screenId) {
+            document.querySelectorAll('.screen-section').forEach(sec => {
+                sec.classList.add('hidden');
+            });
+            const target = document.getElementById('screen-' + screenId);
+            if (target) {
+                target.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update active nav state
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.getAttribute('data-target') === screenId) {
+                    btn.classList.add('bg-sky-50', 'text-sky-600');
+                } else {
+                    btn.classList.remove('bg-sky-50', 'text-sky-600');
+                }
+            });
+        }
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Sub-materi tabs
+        function switchSubMateri(subId) {
+            document.querySelectorAll('.sub-content').forEach(c => c.classList.add('hidden'));
+            document.getElementById('submateri-' + subId).classList.remove('hidden');
+
+            document.querySelectorAll('.sub-tab-btn').forEach(b => {
+                b.classList.remove('bg-sky-600', 'text-white');
+                b.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            const activeBtn = document.getElementById('btn-' + subId);
+            activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
+            activeBtn.classList.add('bg-sky-600', 'text-white');
+        }
+
+        // Custom Modal Function
+        function showModal(title, message, type = 'info') {
+            const modal = document.getElementById('custom-modal');
+            const titleEl = document.getElementById('modal-title');
+            const msgEl = document.getElementById('modal-message');
+            const iconEl = document.getElementById('modal-icon');
+
+            titleEl.textContent = title;
+            msgEl.textContent = message;
+
+            if (type === 'success') {
+                iconEl.className = 'w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl font-bold mb-4';
+                iconEl.innerHTML = '<i class="fa-solid fa-check"></i>';
+            } else if (type === 'error') {
+                iconEl.className = 'w-16 h-16 mx-auto rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-3xl font-bold mb-4';
+                iconEl.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            } else {
+                iconEl.className = 'w-16 h-16 mx-auto rounded-full bg-sky-100 text-sky-600 flex items-center justify-center text-3xl font-bold mb-4';
+                iconEl.innerHTML = '<i class="fa-solid fa-info"></i>';
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('custom-modal').classList.add('hidden');
+        }
+
+        // Activity Checker
+        function checkActivity() {
+            const m1 = document.getElementById('match-1').value;
+            const m2 = document.getElementById('match-2').value;
+            const m3 = document.getElementById('match-3').value;
+            const resEl = document.getElementById('activity-result');
+
+            if (m1 === 'allah' && m2 === 'manusia' && m3 === 'alam') {
+                resEl.className = 'text-sm font-bold text-emerald-600';
+                resEl.textContent = 'Hebat! Semua jawaban benar!';
+                showModal('Kerja Bagus!', 'Semua jawaban aktivitas pencocokan benar!', 'success');
+            } else {
+                resEl.className = 'text-sm font-bold text-rose-600';
+                resEl.textContent = 'Masih ada yang keliru, ayo coba lagi!';
+                showModal('Perhatian', 'Beberapa jawaban masih kurang tepat. Coba periksa kembali kategorinya.', 'error');
+            }
+        }
+
+        // Game Logic
+        const gameQuestions = [
+            { text: "Membiarkan teman yang berbeda agama beribadah dengan tenang di tempat ibadahnya.", answer: true },
+            { text: "Mengejek tradisi dan pakaian adat suku bangsa lain di kelas.", answer: false },
+            { text: "Menolong tetangga yang sedang kesulitan tanpa bertanya apa agamanya.", answer: true },
+            { text: "Tidak mau berteman dengan teman yang berbeda suku dan agama.", answer: false }
+        ];
+        let currentGameIndex = 0;
+
+        function answerGame(userAns) {
+            const currentQ = gameQuestions[currentGameIndex];
+            const feedbackEl = document.getElementById('game-feedback');
+            feedbackEl.classList.remove('hidden');
+
+            if (userAns === currentQ.answer) {
+                feedbackEl.className = 'text-base font-bold text-emerald-600 mb-6';
+                feedbackEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> Benar sekali! Sikap tersebut sangat mulia.';
+            } else {
+                feedbackEl.className = 'text-base font-bold text-rose-600 mb-6';
+                feedbackEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Kurang tepat. Mari ingat kembali materi toleransi.';
+            }
+
+            setTimeout(() => {
+                currentGameIndex = (currentGameIndex + 1) % gameQuestions.length;
+                document.getElementById('game-question').textContent = gameQuestions[currentGameIndex].text;
+                feedbackEl.classList.add('hidden');
+            }, 2000);
+        }
+
+        function resetGame() {
+            currentGameIndex = 0;
+            document.getElementById('game-question').textContent = gameQuestions[0].text;
+            document.getElementById('game-feedback').classList.add('hidden');
+        }
+
+        // Latihan Checker
+        function checkLatihan() {
+            const l1 = document.querySelector('input[name="l1"]:checked');
+            const l2 = document.querySelector('input[name="l2"]:checked');
+            const f1 = document.getElementById('feedback-l1');
+            const f2 = document.getElementById('feedback-l2');
+
+            if (l1) {
+                f1.classList.remove('hidden');
+                if (l1.value === 'benar') {
+                    f1.className = 'mt-3 text-xs font-semibold text-emerald-600';
+                    f1.textContent = '✓ Benar! Tujuan keragaman adalah untuk saling mengenal (litaʿārafū).';
+                } else {
+                    f1.className = 'mt-3 text-xs font-semibold text-rose-600';
+                    f1.textContent = '✗ Kurang tepat. Allah menciptakan manusia untuk saling mengenal, bukan bermusuhan.';
+                }
+            }
+
+            if (l2) {
+                f2.classList.remove('hidden');
+                if (l2.value === 'benar') {
+                    f2.className = 'mt-3 text-xs font-semibold text-emerald-600';
+                    f2.textContent = '✓ Tepat sekali! Kebaikan dalam Islam mencakup akhlak kepada Allah, sesama, dan alam.';
+                } else {
+                    f2.className = 'mt-3 text-xs font-semibold text-rose-600';
+                    f2.textContent = '✗ Kurang tepat. Kebaikan mencakup akhlak secara luas kepada seluruh makhluk.';
+                }
+            }
+
+            if (!l1 || !l2) {
+                showModal('Perhatian', 'Jawab semua soal latihan terlebih dahulu!', 'info');
+            }
+        }
+
+        // Kuis Data (10 Soal Komprehensif)
+        const quizData = [
+            {
+                q: "1. Keragaman suku, bangsa, dan agama di Indonesia merupakan ketetapan Allah SWT yang disebut...",
+                options: ["Sunnatullah", "Qada", "Takdir muallaq", "Mukjizat"],
+                answer: 0,
+                explanation: "Keragaman adalah kenyataan yang tidak bisa dihindari dan merupakan sunnatullah (ketetapan Allah)."
+            },
+            {
+                q: "2. Tujuan Allah SWT menciptakan manusia beraneka ragam suku dan bangsa adalah agar...",
+                options: ["Saling bersaing", "Saling mengenal (litaʿārafū)", "Saling menjatuhkan", "Berpecah belah"],
+                answer: 1,
+                explanation: "Tujuan utama keragaman agar saling mengenal sehingga terjalin hubungan harmonis."
+            },
+            {
+                q: "3. Apa arti potongan hadis 'الْبِرُّ حُسْنُ الْخُلُقِ'?",
+                options: ["Keburukan adalah akhlak tercela", "Kebaikan adalah akhlak mulia", "Ilmu diraih dengan belajar", "Sabar adalah kunci surga"],
+                answer: 1,
+                explanation: "Hadis riwayat Muslim menegaskan bahwa kebaikan adalah akhlak mulia."
+            },
+            {
+                q: "4. Contoh perilaku berakhlak mulia kepada alam sekitar adalah...",
+                options: ["Membuang sampah di sungai", "Menyiram tanaman dan tidak merusak tumbuhan", "Mencabut bunga tanpa alasan", "Mengganggu hewan peliharaan"],
+                answer: 1,
+                explanation: "Menjaga tumbuhan dan lingkungan sekitar adalah wujud akhlak mulia kepada alam."
+            },
+            {
+                q: "5. Mengapa Maria dan ibunya berbuat baik kepada Nadiya yang berbeda agama?",
+                options: ["Karena ada imbalan", "Karena semua agama mengajarkan kebaikan", "Karena dipaksa warga", "Karena bertetangga dekat saja"],
+                answer: 1,
+                explanation: "Semua agama mengajarkan pemeluknya untuk saling menghormati dan berbuat baik kepada siapapun."
+            },
+            {
+                q: "6. Sikap saling menghormati dan menghargai pemeluk agama lain disebut...",
+                options: ["Toleransi", "Fanatisme", "Individualisme", "Egosentris"],
+                answer: 0,
+                explanation: "Toleransi adalah sikap terbaik dalam menjaga kedamaian di tengah keragaman."
+            },
+            {
+                q: "7. Bentuk perwujudan toleransi antarumat beragama di sekolah adalah...",
+                options: ["Mengikuti ibadah agama lain", "Memberikan kebebasan teman beribadah", "Mencampurbaurkan ajaran agama", "Melarang teman berdoa"],
+                answer: 1,
+                explanation: "Memberikan kebebasan dan menghormati keyakinan adalah wujud nyata toleransi."
+            },
+            {
+                q: "8. Surah dalam Al-Qur'an yang menegaskan penolakan kompromi dalam hal akidah (keimanan) adalah...",
+                options: ["Q.S. Al-Kafirun", "Q.S. Al-Ikhlas", "Q.S. An-Nas", "Q.S. Al-Falaq"],
+                answer: 0,
+                explanation: "Q.S. Al-Kafirun ayat 1-6 menegaskan 'Lakum dinukum waliya din' (Untukmu agamamu, dan untukku agamaku)."
+            },
+            {
+                q: "9. Batasan utama dalam toleransi beragama adalah...",
+                options: ["Tidak ada batasan sama sekali", "Jangan sampai mengorbankan prinsip akidah", "Boleh mengikuti ibadah agama lain", "Harus menyatukan semua agama"],
+                answer: 1,
+                explanation: "Toleransi antarumat beragama tidak boleh mengorbankan prinsip-prinsip keyakinan (akidah)."
+            },
+            {
+                q: "10. Pesan moral dari hadis riwayat At-Tabrani menyatakan bahwa ilmu diraih melalui...",
+                options: ["Bermain", "Belajar", "Melamun", "Meniru saja"],
+                answer: 1,
+                explanation: "Sesungguhnya ilmu diraih melalui belajar dan kelembutan sikap dengan terus berupaya."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let userAnswers = new Array(quizData.length).fill(null);
+
+        function loadQuizQuestion() {
+            const qData = quizData[currentQuizIndex];
+            document.getElementById('quiz-question-text').textContent = qData.q;
+            document.getElementById('quiz-progress-indicator').textContent = `Soal ${currentQuizIndex + 1} dari ${quizData.length}`;
+            
+            const progressPercent = ((currentQuizIndex + 1) / quizData.length) * 100;
+            document.getElementById('quiz-progress-bar').style.width = progressPercent + '%';
+
+            const optionsContainer = document.getElementById('quiz-options-container');
+            optionsContainer.innerHTML = '';
+
+            qData.options.forEach((opt, idx) => {
+                const isSelected = userAnswers[currentQuizIndex] === idx;
+                const btnClass = isSelected ? 
+                    'w-full text-left p-4 rounded-2xl border-2 border-sky-500 bg-sky-50 font-semibold text-slate-800 transition flex items-center gap-3' :
+                    'w-full text-left p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 font-medium text-slate-700 transition flex items-center gap-3';
+
+                const div = document.createElement('div');
+                div.className = btnClass;
+                div.innerHTML = `
+                    <div class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600">${String.fromCharCode(65 + idx)}</div>
+                    <span class="text-sm">${opt}</span>
+                `;
+                div.onclick = () => selectQuizOption(idx);
+                optionsContainer.appendChild(div);
+            });
+
+            // Prev button state
+            document.getElementById('quiz-prev-btn').disabled = currentQuizIndex === 0;
+            const nextBtn = document.getElementById('quiz-next-btn');
+            if (currentQuizIndex === quizData.length - 1) {
+                nextBtn.innerHTML = 'Selesaikan Kuis <i class="fa-solid fa-flag-checkered ml-2"></i>';
+            } else {
+                nextBtn.innerHTML = 'Selanjutnya <i class="fa-solid fa-arrow-right ml-2"></i>';
+            }
+        }
+
+        function selectQuizOption(optIdx) {
+            userAnswers[currentQuizIndex] = optIdx;
+            loadQuizQuestion();
+        }
+
+        function nextQuizQuestion() {
+            if (userAnswers[currentQuizIndex] === null) {
+                showModal('Perhatian', 'Pilih salah satu jawaban terlebih dahulu!', 'info');
+                return;
+            }
+
+            if (currentQuizIndex < quizData.length - 1) {
+                currentQuizIndex++;
+                loadQuizQuestion();
+            } else {
+                calculateQuizResult();
+            }
+        }
+
+        function prevQuizQuestion() {
+            if (currentQuizIndex > 0) {
+                currentQuizIndex--;
+                loadQuizQuestion();
+            }
+        }
+
+        function calculateQuizResult() {
+            let correctCount = 0;
+            quizData.forEach((item, idx) => {
+                if (userAnswers[idx] === item.answer) {
+                    correctCount++;
+                }
+            });
+
+            const score = (correctCount / quizData.length) * 100;
+            document.getElementById('result-score').textContent = score;
+            document.getElementById('result-correct').textContent = `${correctCount} / ${quizData.length}`;
+
+            const badgeTitle = document.getElementById('result-badge-title');
+            const statusEl = document.getElementById('result-status');
+
+            if (score >= 80) {
+                badgeTitle.textContent = 'Luar Biasa, Hebat Sekali!';
+                statusEl.textContent = 'Sangat Memuaskan ⭐';
+            } else if (score >= 60) {
+                badgeTitle.textContent = 'Bagus, Pertahankan!';
+                statusEl.textContent = 'Lulus 👍';
+            } else {
+                badgeTitle.textContent = 'Tetap Semangat Belajar!';
+                statusEl.textContent = 'Perlu Belajar Lagi 💡';
+            }
+
+            switchScreen('hasil');
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            userAnswers = new Array(quizData.length).fill(null);
+            loadQuizQuestion();
+        }
+
+        // Reflection emoji selection
+        let selectedEmojiVal = '';
+        function selectEmoji(val, btn) {
+            document.querySelectorAll('.emoji-btn').forEach(b => {
+                b.classList.remove('border-sky-500', 'bg-sky-50', 'scale-110');
+            });
+            btn.classList.add('border-sky-500', 'bg-sky-50', 'scale-110');
+            selectedEmojiVal = val;
+        }
+
+        function saveReflection() {
+            const text = document.getElementById('reflection-text').value;
+            if (!selectedEmojiVal && !text) {
+                showModal('Perhatian', 'Silakan pilih emoji dan isi refleksi belajarmu terlebih dahulu!', 'info');
+                return;
+            }
+            showModal('Terima Kasih!', 'Refleksi belajarmu berhasil disimpan dan dikumpulkan.', 'success');
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            loadQuizQuestion();
+        };
+    </script>
+</body>
+</html>
